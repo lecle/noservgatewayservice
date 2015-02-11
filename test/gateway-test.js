@@ -38,7 +38,7 @@ describe('gateway', function() {
                     return {
                         then : function(callback){ callback({send : function(command, data, callback) {
 
-                            callback(null, {data : {test : 'OK'}});
+                            callback(null, {data : {test : 'OK'}, send : function(){}});
                         }});
 
                             return {fail : function(){}};
