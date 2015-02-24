@@ -19,7 +19,8 @@ describe('gateway', function() {
             var req = {
                 data : {
                     params : {where : '{"test" : "data"}', method : 'GET', _module : 'TEST'},
-                    body : {test : 'data'}
+                    body : {test : 'data'},
+                    headers : {'x-noserv-application-id' : 'supertoken'}
                 }
             };
 
