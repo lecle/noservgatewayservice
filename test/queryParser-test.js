@@ -21,7 +21,6 @@ describe('queryParser', function() {
             assert(parsedData.order);
             assert(parsedData.skip);
             assert(parsedData.count);
-            assert(typeof(parsedData.where.$or[1].updatedAt.getDate()));
 
             done();
         });
