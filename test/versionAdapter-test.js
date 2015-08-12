@@ -6,7 +6,8 @@ var req = {
             _module : 'entities',
             offset : 1,
             sort : '{"t1" : 1, "t2" : -1}'
-        }
+        },
+        method : 'PATCH'
     }
 };
 
@@ -51,6 +52,7 @@ describe('versionAdapter', function() {
             assert.equal('entities', req.data.params._module);
             assert.equal(1, req.data.params.offset);
             assert.equal('{"t1" : 1, "t2" : -1}', req.data.params.sort);
+            assert.equal('PATCH', req.data.method);
 
             require('../lib/versionAdapters').getVersionAdapter('1').hookBeforeRequest(reqAccount, {});
 
@@ -66,6 +68,7 @@ describe('versionAdapter', function() {
             assert.equal('classes', req.data.params._module);
             assert.equal(1, req.data.params.skip);
             assert.equal('t1,-t2', req.data.params.order);
+            assert.equal('PUT', req.data.method);
 
             require('../lib/versionAdapters').getVersionAdapter('v1').hookBeforeRequest(reqAccount, {});
 
